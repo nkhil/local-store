@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useContext } from 'react';
 import './App.css';
+import {AppStateProvider} from './appContext';
+import ProductList from './components/ProductList';
+import Basket from './components/Basket';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AppStateProvider>
+      <h1>Products</h1>
+      <ProductList />
+      <h1>Basket</h1>
+      <Basket />
+      <ul><li>Something comes her</li><li>Something else</li></ul>
+    </AppStateProvider>
+  )
 }
 
 export default App;
