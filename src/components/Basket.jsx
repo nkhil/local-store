@@ -7,13 +7,13 @@ const Basket = () => {
   const [{basket}, dispatch] = useAppState();
   return (
     <>
-    <ul>
-      {basket.map((product, index) => {
-        return (
-          <li key={index}>{product.name} x {product.quantity}</li>
-        )
-      })}
-    </ul>
+      <ul>
+        {basket && basket.map((product, index) => {
+          return (
+            <li key={index}>{product.name} x {product.quantity}</li>
+          )
+        })}
+      </ul>
     </>
   )
 }

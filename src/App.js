@@ -1,17 +1,28 @@
-import React, { useContext } from 'react';
-import './App.css';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import {AppStateProvider} from './appContext';
 import ProductList from './components/ProductList';
-import Basket from './components/Basket';
+import Basket from './views/Basket';
+import GlobalStyle from './components/GlobalStyles';
+import Container from './components/Container';
+import Navbar from './components/Navbar';
+import Home from './views/Home';
 
 const App = () => {
   return (
-    <AppStateProvider>
-      <h1>Products</h1>
-      <ProductList />
-      <h1>Basket</h1>
-      <Basket />
-    </AppStateProvider>
+    <>
+      <GlobalStyle />
+      <Router>
+          <Switch>
+            <Route exact path='/'><Home /></Route>
+            <Route path='/basket'><Basket /></Route>
+          </Switch>
+      </Router>
+    </>
   )
 }
 

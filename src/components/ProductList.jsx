@@ -1,25 +1,31 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useAppState } from '../appContext';
+import Item from './Item';
 
-const ProductList = () => {
-  const [{products}, dispatch] = useAppState();
+const ProductList = ({ className }) => {
+  const [{products, basket}, dispatch] = useAppState();
+  console.log('\n =========================>: ProductList -> basket', basket);
   return (
-    <>
+    <div className={className}>
       <ul>
-        {products.map((product, index) => {
-          return (
-            <li 
-              key={index}
-              onClick={ () => dispatch ({ type: 'ADD_TO_BASKET', product })}
-            >
-              {product.name}
-              {product.price}
-            </li>
-          )
-        })}
+        {products.map((product) => (
+          <Item product={product} key={product.id}/>
+        ))}
       </ul>
-    </>
+    </div>
   )
 };
 
-export default ProductList;
+const StyledProductList = styled(ProductList)`
+  
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+`;
+
+export default StyledProductList;
