@@ -11,7 +11,6 @@ const App = () => {
       <ProductList />
       <h1>Basket</h1>
       <Basket />
-      <ul><li>Something comes her</li><li>Something else</li></ul>
     </AppStateProvider>
   )
 }

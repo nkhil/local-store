@@ -1,7 +1,9 @@
 import React from 'react';
 import { useAppState } from '../appContext';
+import useLocal from '../useLocal';
 
 const Basket = () => {
+  useLocal();
   const [{basket}, dispatch] = useAppState();
   return (
     <>

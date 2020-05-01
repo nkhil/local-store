@@ -7,9 +7,17 @@ const AppContext = createContext();
 const appStateReducer = (state, action) => {
   switch(action.type){
     case 'ADD_TO_BASKET': {
+      let newBasketState = addProductToBasket(state.basket, action.product);
+      localStorage.setItem('basket', JSON.stringify(newBasketState));
       return {
         ...state,
-        basket: addProductToBasket(state.basket, action.product),
+        basket: newBasketState,
+      }
+    }
+    case 'GET_FROM_LOCAL_STATE': {
+      return {
+        ...state,
+        basket: action.basket,
       }
     }
     default:
@@ -27,6 +35,7 @@ export function useAppState() {
 }
 
 export function AppStateProvider({children}) {
+
   let cake = useReducer(appStateReducer, initialState);
   return <AppContext.Provider value={cake}>{children}</AppContext.Provider>
 }
