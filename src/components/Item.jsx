@@ -19,7 +19,6 @@ const Item = ({ product, className }) => {
 }
 
 const StyledItem = styled(Item)`
-  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap');
   font-family: 'Poppins', sans-serif;
   background-color: #F6F6F6;
   margin: 10px;
