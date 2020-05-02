@@ -8,7 +8,6 @@ import GlobalStyle from '../components/GlobalStyles';
 const BasketView = () => {
   return (
     <>
-      <GlobalStyle />
       <AppStateProvider>
         <Container>
           <Navbar />
