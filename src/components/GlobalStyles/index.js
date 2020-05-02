@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   /* @import url('https://rsms.me/inter/inter.css'); */
   /* @import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap'); */
   /* @import url('https://fonts.googleapis.com/css?family=Port+Lligat+Slab&display=swap'); */
-  /* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap'); */
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
   /* html {
     font-family: 'Poppins', sans-serif;
   } */
