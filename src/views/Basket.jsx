@@ -1,22 +1,31 @@
 import React from 'react';
+import styled from 'styled-components';
 import { AppStateProvider } from '../appContext';
 import Basket from '../components/Basket';
 import Container from '../components/Container';
 import Navbar from '../components/Navbar';
 import GlobalStyle from '../components/GlobalStyles';
 
-const BasketView = () => {
+const BasketView = ({ className }) => {
   return (
     <>
       <AppStateProvider>
         <Container>
           <Navbar />
-          <h1>Basket</h1>
-          <Basket />
+          <div className={className}>
+            <h1>Your Basket</h1>
+            <Basket />
+          </div>
         </Container>
       </AppStateProvider>
     </>
   )
 }
 
-export default BasketView;
+const StyledBasketView = styled(BasketView)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export default StyledBasketView;
