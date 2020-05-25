@@ -4,8 +4,8 @@ import { useAppState } from '../appContext';
 import Item from './Item';
 
 const ProductList = ({ className }) => {
-  const [{products, basket}, dispatch] = useAppState();
-  console.log('\n =========================>: ProductList -> basket', basket);
+  const [{products}, dispatch] = useAppState();
+  
   return (
     <div className={className}>
       <ul>

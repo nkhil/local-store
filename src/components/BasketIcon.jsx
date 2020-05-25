@@ -6,7 +6,6 @@ import { useAppState } from '../appContext';
 const BasketIcon = ({ className }) => {
   
   const [{basket}, dispatch ] = useAppState();
-  console.log('\n =========================>: BasketIcon -> basket', basket);
 
   return (
     <div className={className}>

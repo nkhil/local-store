@@ -18,8 +18,10 @@ const App = () => {
       <GlobalStyle />
       <Router>
           <Switch>
-            <Route exact path='/'><Home /></Route>
-            <Route path='/basket'><Basket /></Route>
+            <AppStateProvider>
+              <Route exact path='/'><Home /></Route>
+              <Route path='/basket'><Basket /></Route>
+            </AppStateProvider>
           </Switch>
       </Router>
     </>

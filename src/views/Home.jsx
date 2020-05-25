@@ -10,12 +10,10 @@ import Navbar from '../components/Navbar';
 const Home = ({ className }) => {
   return (
     <>
-      <AppStateProvider>
-          <Container>
-            <Navbar />
-            <ProductList />
-          </Container>
-      </AppStateProvider>
+      <Container>
+        <Navbar />
+        <ProductList />
+      </Container>
     </>
   )
 }

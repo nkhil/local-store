@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useAppState } from '../appContext';
 
 import Logo from './Logo';
 import BasketIcon from './BasketIcon';
 
 const Navbar = ({ className }) => {
+  const [{basket}, dispatch ] = useAppState();
+
   return (
     <div className={className}>
       <Logo />

@@ -9,15 +9,13 @@ import GlobalStyle from '../components/GlobalStyles';
 const BasketView = ({ className }) => {
   return (
     <>
-      <AppStateProvider>
-        <Container>
-          <Navbar />
-          <div className={className}>
-            <h1>Your Basket</h1>
-            <Basket />
-          </div>
-        </Container>
-      </AppStateProvider>
+      <Container>
+        <Navbar />
+        <div className={className}>
+          <h1>Your Basket</h1>
+          <Basket />
+        </div>
+      </Container>
     </>
   )
 }
