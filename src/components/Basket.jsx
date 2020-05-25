@@ -7,6 +7,12 @@ import BasketItem from './BasketItem';
 const Basket = () => {
   useLocal();
   const [{basket}, dispatch] = useAppState();
+  
+  const basketTotalPrice = basket.reduce((acc, item) => {
+    const pricePerItem = item.price * item.quantity;
+    return acc + pricePerItem;
+  }, 0);
+
   return (
     <>
       <ul>
@@ -14,6 +20,7 @@ const Basket = () => {
           <BasketItem product={product} key={index} />
         ))}
       </ul>
+      <h2>Total: ₹{basketTotalPrice}</h2>
     </>
   )
 }
