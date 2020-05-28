@@ -1,9 +1,20 @@
-# Local store
+# :convenience_store: Local store
 
-Experimenting using reducers alongside the context API as a replacement for using Redux to manage state, as well as experimenting storing state in a browser's localStorage. This is the first attempt at building a react app without any prop drilling (and without using Redux, which I'm unfamiliar with as of May 2, 2020).
+:point_right: [Visit the app](https://lo-cal-store.herokuapp.com/)
 
-This repository was built trying out ideas from Cassidy William's [Pluralsight webinar](https://www.youtube.com/watch?v=vrmpUCpmawg). You can find her original repo [here](https://github.com/cassidoo/reading-challenge-webinar).
+## :gear: Setup
 
-## This repo is also a proof of concept
+```javascript
+git clone https://github.com/nkhil/local-store.git
+cd local-store
+npm install
+npm run dev
+```
 
-This is also a proof of concept app for a system to order groceries, without involving payments.
+## :floppy_disk: Managing state without Redux
+
+This was my first time playing around with managing state in React without prop drilling.
+
+I was experimenting using React's `useReducer` along with the `useContext` API to manage state throughout the app. This is also the first time I've tried to save state in localStorage in a react project.
+
+This repository was built trying out ideas from Cassidy William's [Pluralsight webinar](https://www.youtube.com/watch?v=vrmpUCpmawg). You can find their original repo [here](https://github.com/cassidoo/reading-challenge-webinar).
