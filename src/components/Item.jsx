@@ -2,16 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { useAppState } from '../appContext';
 import Button from './Button';
+import { convertPenniesToPounds } from '../helpers/currencyConverter';
+import { returnAttributes } from '../helpers/returnAttributes';
 
 const Item = ({ product, className }) => {
-  const { name, additionalName, id, price, attributes: { weight }} = product;
+  const { name, id, price, attributes } = product;
   const [, dispatch] = useAppState();
   return (
     <div className={className}>
       <li key={id}>
         <h2>{name}</h2>
-        <p>{additionalName}</p>
-        <h3>{weight.weight}{weight.unit} - ₹{price}</h3>
+        <h3>{returnAttributes(attributes)} - £{convertPenniesToPounds(price)}</h3>
         <Button text={'Add to basket'} onClick={() => dispatch ({ type: 'ADD_TO_BASKET', product })}/>
       </li>
     </div>

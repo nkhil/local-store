@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAppState } from '../appContext';
 import useLocal from '../useLocal';
+import { convertPenniesToPounds } from '../helpers/currencyConverter';
 
 import BasketItem from './BasketItem';
 
@@ -20,7 +21,7 @@ const Basket = () => {
           <BasketItem product={product} key={index} />
         ))}
       </ul>
-      <h2>Total: ₹{basketTotalPrice}</h2>
+      <h2>Total: £{convertPenniesToPounds(basketTotalPrice)}</h2>
     </>
   )
 }

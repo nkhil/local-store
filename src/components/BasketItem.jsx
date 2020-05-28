@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
+import { convertPenniesToPounds } from '../helpers/currencyConverter';
 
 import { useAppState } from '../appContext'
 
@@ -14,7 +15,7 @@ const BasketItem = ({ className, product }) => {
         <FaMinusCircle size={15} color='#33A753' onClick={ () => dispatch ({ type: 'DECREMENT_ITEM', product }) }/>
         {quantity}
         <FaPlusCircle size={15} color='#33A753' onClick={ () => dispatch ({ type: 'INCREMENT_ITEM', product }) }/>
-        <div className={'product-price'}>₹{price * quantity}</div>
+        <div className={'product-price'}>£{convertPenniesToPounds(price * quantity)}</div>
       </li>
     </>
   )

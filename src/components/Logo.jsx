@@ -8,7 +8,7 @@ const Logo = ({ className }) => {
     <div className={className}>
       <Link to='/'>
         <CircleFill size={30} color='#33A753'/>
-        <p>Hari Om</p>
+        <p>Local Store</p>
       </Link>
     </div>
   )
